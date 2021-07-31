@@ -7,8 +7,7 @@ public class ProductDto {
     private String name;
     private double price;
     private Date expirdDate;
-    private int taxRate;
-    private int discountRate;
+
 
     public String getId() {
         return id;
@@ -42,19 +41,5 @@ public class ProductDto {
         this.expirdDate = expirdDate;
     }
 
-    public int getTaxRate() {
-        return taxRate;
-    }
 
-    public void setTaxRate(int taxRate) {
-        this.taxRate = taxRate;
-    }
-
-    public int getDiscountRate() {
-        return discountRate;
-    }
-
-    public void setDiscountRate(int discountRate) {
-        this.discountRate = discountRate;
-    }
 }

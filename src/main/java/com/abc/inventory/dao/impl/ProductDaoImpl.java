@@ -16,7 +16,7 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public int save(Product product) throws Exception {
-        String sql = "INSERT INTO PRODUCT (ID,NAME,PRICE,EXPIRED_DATE,TAX_RATE,DISCOUNT_RATE) VALUES (:id,:name,:price,:expiredDate,:taxRate,:discountRate)";
+        String sql = "INSERT INTO PRODUCT (ID,NAME,PRICE,EXPIRED_DATE) VALUES (:id,:name,:price,:expiredDate)";
 
 
         NamedParameterJdbcTemplate namedParameterJdbcTemplate=new NamedParameterJdbcTemplate(jdbcTemplate.getDataSource());
@@ -26,8 +26,6 @@ public class ProductDaoImpl implements ProductDao {
         mapSqlParameterSource.addValue("name", product.getName());
         mapSqlParameterSource.addValue("price", product.getPrice());
         mapSqlParameterSource.addValue("expiredDate", product.getExpirdDate());
-        mapSqlParameterSource.addValue("taxRate", product.getTaxRate());
-        mapSqlParameterSource.addValue("discountRate", product.getDiscountRate());
 
         return namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
     }

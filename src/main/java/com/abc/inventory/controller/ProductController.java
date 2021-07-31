@@ -18,27 +18,26 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping(value = "/view_add_product")
-    public ModelAndView viewAddProduct()throws Exception{
-        ModelAndView modelAndView=new ModelAndView("product/view_add_product");
+    public ModelAndView viewAddProduct() throws Exception {
+        ModelAndView modelAndView = new ModelAndView("product/view_add_product");
         return modelAndView;
 
     }
 
     @PostMapping(value = "/add_product")
     @ResponseBody
-    public String save(@RequestParam String name,@RequestParam double price,@RequestParam String expirdDate,
-                       @RequestParam int taxRate,@RequestParam int discountRate)throws Exception{
-        ProductDto productDto=new ProductDto();
+    public String save(@RequestParam String name, @RequestParam double price, @RequestParam String expirdDate)
+            throws Exception {
+        ProductDto productDto = new ProductDto();
         productDto.setId(UUID.randomUUID().toString());
         productDto.setName(name);
         productDto.setPrice(price);
         productDto.setExpirdDate(Utility.convertDateFormat(expirdDate));
-        productDto.setTaxRate(taxRate);
-        productDto.setDiscountRate(discountRate);
 
-        if(productService.save(productDto)){
+
+        if (productService.save(productDto)) {
             return "200";
-        }else {
+        } else {
             return "500";
         }
 

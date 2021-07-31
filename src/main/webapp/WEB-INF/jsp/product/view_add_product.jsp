@@ -58,17 +58,7 @@
 
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Tax Rate (%):</label>
 
-                                    <input max="100" min="0"  type="number" class="form-control" id="taxRate" name="taxRate" placeholder="Tax Rate (%)">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Discount Rate (%):</label>
-
-                                    <input max="100" min="0" type="number" class="form-control" id="discountRate" name="discountRate" placeholder="Discount Rate (%)">
-                                </div>
                             </div>
 
                             <div class="card-footer">
@@ -103,12 +93,6 @@
                     required: true
                 },
                 expirdDate: {
-                    required: true
-                },
-                taxRate: {
-                    required: true
-                },
-                discountRate: {
                     required: true
                 }
             },
