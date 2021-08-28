@@ -18,6 +18,7 @@ public class CustomerController {
 
     @GetMapping(value = "/view_add_customer")
     public ModelAndView viewAddCustomer()throws Exception{
+        System.out.println("sdfsdf");
         ModelAndView modelAndView=new ModelAndView("customer/view_add_customer");
         return modelAndView;
     }
